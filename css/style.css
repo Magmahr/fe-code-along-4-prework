@@ -1,72 +1,148 @@
-@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
-@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
-
-/* This 
-is 
-a comment! */
-
-/* CSS Syntax:
-
+<style>
+@import url('https://fonts.googleapis.com/css?family=Elsie+Swash+Caps');
+</style>
+/* this
+is a comment*/
+/* CSS Syntax
 selector {
-  property: value;
-  property: value;
+property: value;
+propert: value;
 }
 
+Type selector=
 */
-
-/* Type selector */
-
-p { /* select all <p> */
-  font-size: 1em; /* 16px, ?pt, 100%, 1em */
+p { /*select all <p> */
+  font-size: 16px; /* ?pt-different browsers different size, 100% is relative, 1em ~ 16 px */
   line-height: 1.5em;
 }
 
 figcaption {
-  /*font-weight: normal;
+  font-weight: normal;
   font-size: 0.75em;
-  line-height: 1.5em;
-  font-family: Georgia, "New Times Roman", serif;*/
+  line-height: 1.5 em;
+  font-family: Georgia, "New Times Roman", serif;
   font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
   color: #777;
   text-align: right;
 }
 
-/* Class selector (applied to as many elements as you like) */
-
-.milk-text { /* select elements with class="milk-text" */
-  font: bold 2.6em 'Elsie Swash Caps', cursive;
-  color: white;
-  text-shadow: 0 2px 3px #000;
+/* Class selector (applied to as many elements as you like)*/
+.milk-text { /* select elements with class="milk-text"}*/
+font: bold 2.6em 'Elsie Swash Caps', cursive;
+color: white
+text-shadow: 0 2px 3px #000;
 }
 
-/* ID selector (apply to one unique element per page) */
+/*ID selector can only apply to one element per page */
 
-#logo { /* select elements with id="logo" */
-  background: aqua;
+#logo {
+
 }
 
-/* Descendent Selector */
+/*descendant selector */
 
-#logo h1 { /* selects <h1> if inside the id="logo" */
-  font-family: 'Clicker Script', cursive;
-}
-
-#logo h2 {
+#logo h1 { /*descendant selector  selects h1 only if inside the id="logo"*/
   font-family: 'Elsie Swash Caps', cursive;
 }
 
-/* Psuedo Selector */
+#logo h2 { /*descendant selector  selects h2 only if inside the id="logo"*/
+  font-family: 'Elsie Swash Caps', cursive;
+}
 
-#details a:link, #details a:visited {
-  color: black;
+/*pseudoclass selector selects an element in relation to event states*/
+
+#details a:link, #details a:visited{
+  color:black;
   text-decoration: none;
 }
 
 #details a:hover {
-  color: black;
+  color:black;
   text-decoration: underline;
 }
 
 #details a:active {
-  color: red;
+  color:red;
+}
+/* LAYOUT */
+
+video, audio {
+  max-width: 100%;
+
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+
+}
+
+.col-1 {
+  float: left;
+  width: 32%;
+
+}
+
+.col-2 {
+  float: left;
+  width: 66%;
+
+}
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  list-style: 0;
+}
+
+.col-3 {
+  background: #ccc;
+}
+
+[class*="col-"] {
+  margin-left: 2%;
+}
+
+.first {
+  margin: 0%;
+}
+/*SECTIONS*/
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/*SOCIAL*/
+
+#social {
+  position: fixed;
+  top: 200px;
+  right: 20px;
+  width: 40px;
+  z-index: 1;
+}
+
+#social a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+
 }
